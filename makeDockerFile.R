@@ -1,6 +1,14 @@
+library(containerit)
 
-dockerfile_object <- dockerfile(from = file.path("../tuto.Rmd"),
+file.copy(from = ("./tuto.Rmd"),
+  to = ("./docker/tuto.Rmd"),
+  overwrite = TRUE)
+
+dockerfile_object <- dockerfile(from = ("./tuto.Rmd"),
   silent = TRUE,
-  cmd = CMD_Render("../tuto.Rmd"))
+  cmd = CMD_Render("./tuto.Rmd"))
+
 print(dockerfile_object)
-write(dockerfile_object, file = "Dockerfile")
+write(dockerfile_object, file = "./docker/Dockerfile")
+
+
