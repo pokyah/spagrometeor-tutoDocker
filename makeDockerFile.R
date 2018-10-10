@@ -1,6 +1,6 @@
 
-dockerfile_object <- dockerfile(from = file.path("tuto.Rmd"),
+dockerfile_object <- dockerfile(from = file.path("../tuto.Rmd"),
   silent = TRUE,
-  cmd = CMD_Render("tuto.Rmd"))
+  cmd = CMD_Render("../tuto.Rmd"))
 print(dockerfile_object)
-write(dockerfile_object, file = "./docker/Dockerfile")
+write(dockerfile_object, file = "Dockerfile")
